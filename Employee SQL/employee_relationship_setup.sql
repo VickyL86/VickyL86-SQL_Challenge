@@ -12,7 +12,7 @@ ALTER TABLE "employees" ADD CONSTRAINT "fk_employees_emp_title_id" FOREIGN KEY (
 -- Create a new table with columns emp_no (primary key) and dept_no_1
 CREATE TABLE dept_emp_unique (
   emp_no INT PRIMARY KEY,
-  dept_no_1 VARCHAR(10)
+  dept_no_1 VARCHAR(4)
 );
 
 -- Insert data into the new table, splitting multiple dept_no values into separate columns
@@ -24,7 +24,7 @@ FROM dept_emp
 GROUP BY emp_no;
 
 -- Add a new column dept_no_2 to the new table
-ALTER TABLE dept_emp_unique ADD COLUMN dept_no_2 VARCHAR(10);
+ALTER TABLE dept_emp_unique ADD COLUMN dept_no_2 VARCHAR(4);
 
 -- Update dept_no_2 values with the additional dept_no values
 UPDATE dept_emp_unique
